@@ -1,7 +1,7 @@
 # pd2-sudoku
 ## Source
-Based on: https://pd2a.imslab.org/gitlab/root/2020-pd2-sudoku
-This README.md is copied from https://pd2a.imslab.org/gitlab/root/2020-pd2-sudoku/blob/master/README.md and modified accordingly.
+- Based on: https://pd2a.imslab.org/gitlab/root/2020-pd2-sudoku
+- This README.md is copied from https://pd2a.imslab.org/gitlab/root/2020-pd2-sudoku/blob/master/README.md and modified accordingly.
 ## Project Completion Date
 2020/04/11
 ## Objectives
