@@ -6,13 +6,12 @@
  * You can modify this file if needed.             *
  ***************************************************/
 
-class Sudoku
-{
-public:
+class Sudoku {
+  public:
     // constructor
     Sudoku();
     Sudoku(const int init_map[]);
-    
+
     // basic attributes
     static const int sudokuSize = 81;
 
@@ -28,7 +27,7 @@ public:
     bool fillNakedSingle();
     bool fillHiddenSingle();
     bool findNakedTuple();
-    
+
     // others
     void printMap();
     int* getMap();
@@ -44,7 +43,7 @@ public:
     static void initializeHouseIterator(); // generates iterator for the 27 houses
     void initializeCddtMap(); // generate a map of all the possible options for each cell
 
-private:
+  private:
     int map[sudokuSize];
     int init_map[sudokuSize];
     static int numOfGivens;

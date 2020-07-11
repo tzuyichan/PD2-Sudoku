@@ -97,24 +97,24 @@ void Sudoku::rotate(const int x) { // rotate x times in the clockwise direction
 void Sudoku::flip(const int x) { // flip w.r.t center axis
     int width = sqrt(sudokuSize);
     switch (x) {
-        case 0: // up down flip
-            for (int i=0; i<floor(width/2); ++i) {
-                for (int j=0; j<width; ++j) {
-                    int temp = map[i*width+j];
-                    map[i*width+j] = map[(width-1-i)*width+j];
-                    map[(width-1-i)*width+j] = temp;
-                }
+    case 0: // up down flip
+        for (int i=0; i<floor(width/2); ++i) {
+            for (int j=0; j<width; ++j) {
+                int temp = map[i*width+j];
+                map[i*width+j] = map[(width-1-i)*width+j];
+                map[(width-1-i)*width+j] = temp;
             }
-            break;
-        case 1: // left right flip
-            for (int i=0; i<width; ++i) {
-                for (int j=0; j<floor(width/2); ++j) {
-                    int temp = map[i*width+j];
-                    map[i*width+j] = map[i*width+(width-1-j)];
-                    map[i*width+(width-1-j)] = temp;
-                }
+        }
+        break;
+    case 1: // left right flip
+        for (int i=0; i<width; ++i) {
+            for (int j=0; j<floor(width/2); ++j) {
+                int temp = map[i*width+j];
+                map[i*width+j] = map[i*width+(width-1-j)];
+                map[i*width+(width-1-j)] = temp;
             }
-            break;
+        }
+        break;
     }
 }
 
@@ -130,11 +130,9 @@ bool Sudoku::solve(Sudoku question, Sudoku& answer) {
         if (question.isCorrect()) {
             answer = question;
             return true;
-        }
-        else
+        } else
             return false;
-    }
-    else {
+    } else {
         Sudoku::recursion_depth++;
         std::vector<int> v_unused;
         question.checkUnusedV(firstZero, v_unused);
@@ -171,7 +169,7 @@ bool Sudoku::fillHiddenSingle() {
         for (int j=0; j<9; ++j) { // scan each row, col or block
             int arr_unity[9] = {0};
             for (int k=0; k<9; ++k) { // scan each element
-            // scan and extract
+                // scan and extract
                 if (cddt_map[house_it[i][j][k]].size() != 0) { // if blank is not filled in
                     for (it=cddt_map[house_it[i][j][k]].begin(); it!=cddt_map[house_it[i][j][k]].end(); ++it) {
                         ++arr_unity[*it-1]; // count number of appearances of candidates
@@ -255,7 +253,7 @@ bool Sudoku::isCorrect() {
     for (int i=0; i<9; ++i) { // check blocks
         for (int j=0; j<9; ++j) {
             location = 27*(i/3) + 3*(i%3) + 9*(j/3) + (j%3);
-        check_arr[j] = map[location];
+            check_arr[j] = map[location];
         }
         check_result = checkUnity(check_arr);
         if (check_result == false)
@@ -333,16 +331,16 @@ void Sudoku::getLeastCandidateBlank() {
 
 
 void Sudoku::printMap() {
-        for (int i=0; i<9; ++i) {
-            for (int j=0; j<9; ++j) {
-                std::cout << map[i*9+j];
-                if (j == 8) {
-                    std::cout << '\n';
-                } else {
-                    std::cout << ' ';
-                }
+    for (int i=0; i<9; ++i) {
+        for (int j=0; j<9; ++j) {
+            std::cout << map[i*9+j];
+            if (j == 8) {
+                std::cout << '\n';
+            } else {
+                std::cout << ' ';
             }
         }
+    }
 }
 
 
@@ -376,7 +374,7 @@ void Sudoku::checkUnusedV(const int index, std::vector<int>& v_unused) {
         if (map[location] != 0)
             ++arr_unity[map[location]-1];
     }
-    
+
     for (int i=0; i<9; ++i) { // return vector of valid (unused) elements in map[index]
         if (arr_unity[i] == 0)
             v_unused.emplace_back(i+1);
@@ -401,7 +399,7 @@ void Sudoku::checkUnusedS(const int index, std::set<int>& s_unused) {
         if (map[location] != 0)
             ++arr_unity[map[location]-1];
     }
-    
+
     for (int i=0; i<9; ++i) { // return vector of valid (unused) elements in map[index]
         if (arr_unity[i] == 0)
             s_unused.emplace(i+1);
