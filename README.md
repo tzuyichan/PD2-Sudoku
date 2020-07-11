@@ -1,10 +1,10 @@
-# pd2-sudoku
+# PD2-Sudoku
 ## Source
 - Based on: https://pd2a.imslab.org/gitlab/root/2020-pd2-sudoku
 - This README.md is copied from https://pd2a.imslab.org/gitlab/root/2020-pd2-sudoku/blob/master/README.md and modified accordingly.
 ## Project Completion Date
 2020/04/11
-## Objectives
+## Objective
 1. Generate a valid sudoku problem.
 2. Transform an existing sudoku into a new sudoku by swapping, rotating, or flipping its elements.
 3. Solve the sudoku if it has an unique solution.
