@@ -8,6 +8,7 @@
 1. Generate a valid sudoku problem.
 2. Transform an existing sudoku into a new sudoku by swapping, rotating, or flipping its elements.
 3. Solve the sudoku if it has an unique solution.
+4. Solve the sudoku in < 1 sec. for full marks. My avg time: **0.024 sec**.
 ## Input / Output
 ### Generate
 1. Output sudoku problem when execution
