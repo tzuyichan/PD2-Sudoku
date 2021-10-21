@@ -1,7 +1,6 @@
 # PD2-Sudoku
 ## Source
-- Based on: https://pd2a.imslab.org/gitlab/root/2020-pd2-sudoku
-- This README.md was copied from https://pd2a.imslab.org/gitlab/root/2020-pd2-sudoku/blob/master/README.md and modified accordingly.
+- Project description: https://slides.com/hmkrl/lifegamer-platform-tutorial
 ## Project Completion Date
 2020/04/11
 ## Objective
